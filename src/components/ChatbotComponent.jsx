@@ -110,6 +110,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import chatbotLogo from '../assets/images/chatbot.gif'; 
+
 
 // MessageBox component for displaying messages
 const MessageBox = ({ message, isAI }) => {
@@ -136,7 +138,8 @@ const ChatbotComponent = () => {
         setLoading(true);
 
         try {
-            const res = await fetch("http://127.0.0.1:5000/bot/ask-ai", {
+            // const res = await fetch("http://127.0.0.1:5000/bot/ask-ai", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/bot/ask-ai`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ query }),
@@ -172,7 +175,7 @@ const ChatbotComponent = () => {
             {/* Centered Chatbot GIF */}
             <div className="text-center mb-8">
                 <img 
-                    src="src/assets/images/chatbot.gif" 
+                    src={chatbotLogo}
                     alt="Chatbot" 
                     className="w-32 h-32 sm:w-48 sm:h-48 mx-auto rounded-2xl" 
                 />

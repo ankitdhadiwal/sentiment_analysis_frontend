@@ -68,6 +68,7 @@
 
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
+import technologyLogo from '../assets/images/technology.png'; 
 
 export default function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -78,7 +79,7 @@ export default function NavigationBar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo and Text aligned to the left */}
           <div className="flex items-center space-x-4 ">
-            <img src="/src/assets/images/technology.png" alt="Drstikon AI Logo" className="h-12" />
+            <img src={technologyLogo} alt="Drstikon AI Logo" className="h-12" />
             <span className="text-black font-bold text-2xl font-serif">Drstikon-AI</span>
           </div>
 
