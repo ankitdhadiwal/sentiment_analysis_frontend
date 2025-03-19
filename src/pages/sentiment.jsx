@@ -15,7 +15,8 @@ const Sentiment = () => {
   const handleAnalyzeClick = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5000/news/${stock}`);
+      // const response = await axios.get(`http://localhost:5000/news/${stock}`);
+      const response = await axios.get(`https://web-production-6ab3.up.railway.app/news/${stock}`);
       const data = response.data;
       setNewsData(data.data.articles);
 
